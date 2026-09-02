@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #17190f;
+  --color-paper: #f6f3ea;
+  --color-paper-2: #efe9db;
+  --color-line: #ded6c1;
+  --color-accent: #2f4d3a;
+  --color-accent-dark: #203528;
+  --color-rust: #b5522f;
+  --color-muted: #6f6a5c;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-paper-2: var(--color-paper-2);
+  --color-line: var(--color-line);
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-rust: var(--color-rust);
+  --color-muted: var(--color-muted);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+.container-page {
+  max-width: 84rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
