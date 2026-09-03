@@ -9,4 +9,3 @@ DEPLOY.md
 *.md
 .eslint*
 .postcss*
-tsconfig.json
