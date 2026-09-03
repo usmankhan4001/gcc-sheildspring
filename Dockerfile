@@ -17,6 +17,7 @@ RUN \
 
 # Stage 2: Application Builder
 FROM base AS builder
+ARG CACHE_BUST=1
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
