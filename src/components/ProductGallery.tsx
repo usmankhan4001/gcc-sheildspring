@@ -6,14 +6,10 @@ import ProductImage from "@/components/ProductImage";
 export default function ProductGallery({
   images,
   primaryImage,
-  palette,
-  category,
   name,
 }: {
   images?: string[];
   primaryImage: string;
-  palette: [string, string];
-  category: string;
   name: string;
 }) {
   const allImages = images && images.length > 0 ? images : [primaryImage];
@@ -34,10 +30,8 @@ export default function ProductGallery({
             >
               <ProductImage
                 src={img}
-                palette={palette}
-                category={category}
-                label={`${name} view ${idx + 1}`}
-                className="h-full w-full"
+                alt={`${name} view ${idx + 1}`}
+                className="h-full w-full object-cover"
               />
             </button>
           ))}
@@ -47,11 +41,8 @@ export default function ProductGallery({
       <div className="relative aspect-[4/5] flex-1 overflow-hidden rounded-lg bg-paper-2 shadow-sm">
         <ProductImage
           src={activeImage}
-          palette={palette}
-          category={category}
-          label={name}
-          className="h-full w-full"
-          priority
+          alt={name}
+          className="h-full w-full object-cover"
         />
       </div>
     </div>
