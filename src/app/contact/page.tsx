@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Get in touch with the ${site.name} customer care team.`,
+  description: `Get in touch with the ${site.name} team.`,
 };
 
 export default function ContactPage() {
@@ -14,8 +14,8 @@ export default function ContactPage() {
         <p className="text-xs font-semibold uppercase tracking-widest text-muted">Contact</p>
         <h1 className="mt-3 font-display text-3xl">We&apos;re here to help</h1>
         <p className="mt-4 text-sm leading-relaxed text-muted">
-          Questions about an order, sizing, or a repair? Send us a message and
-          our customer care team will get back to you within one business day.
+          Questions about an order, sizing, or just want to say hi? Send us a
+          message and we&apos;ll get back to you within one business day.
         </p>
       </div>
 

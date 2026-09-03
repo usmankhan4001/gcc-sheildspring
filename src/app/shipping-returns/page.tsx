@@ -64,14 +64,6 @@ export default function ShippingReturnsPage() {
             refund — your choice.
           </p>
         </Section>
-
-        <Section title="Repair program">
-          <p>
-            Shieldspring garments are built to be repaired. If a seam, zipper,
-            or button fails from normal wear, reach out and we&apos;ll help you
-            get it fixed, often at no cost within the first year.
-          </p>
-        </Section>
       </div>
     </div>
   );

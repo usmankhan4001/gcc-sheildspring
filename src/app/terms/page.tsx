@@ -27,7 +27,7 @@ export default function TermsPage() {
       <div className="mt-10 max-w-2xl">
         <Section title="1. About us">
           <p>
-            {site.domain} is operated by {site.legalName} (&ldquo;Shieldspring&rdquo;,
+            {site.domain} is operated by {site.legalName} (&ldquo;Agent Lume&rdquo;,
             &ldquo;we&rdquo;, &ldquo;us&rdquo;), a company registered in Hong Kong under
             Company No. {site.registrationNo}, with its registered office at{" "}
             {site.address.line1}, {site.address.line2}, {site.address.line3}. By
@@ -66,7 +66,7 @@ export default function TermsPage() {
         <Section title="5. Intellectual property">
           <p>
             All content on this site — including product designs, photography,
-            text, and the Shieldspring name and logo — is the property of{" "}
+            text, and the Agent Lume name and logo — is the property of{" "}
             {site.legalName} or its licensors and may not be reproduced without
             written permission.
           </p>

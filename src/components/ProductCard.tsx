@@ -8,10 +8,8 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-paper-2">
         <ProductImage
           src={product.image}
-          palette={product.palette}
-          category={product.category}
-          label={product.name}
-          className="h-full w-full transition duration-500 group-hover:scale-105"
+          alt={product.name}
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
         <div className="absolute left-3 top-3 flex gap-2">
           {product.isNew && (
@@ -28,7 +26,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="mt-3 flex items-start justify-between gap-2">
         <div>
-          <p className="text-sm font-medium text-ink group-hover:text-accent transition">{product.name}</p>
+          <p className="text-sm font-medium text-ink">{product.name}</p>
           <p className="text-xs text-muted">{product.colors.length} colors</p>
         </div>
         <div className="text-right text-sm">

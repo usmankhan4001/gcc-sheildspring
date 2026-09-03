@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+.github
+.gitignore
+README.md
+DEPLOY.md
+.env*
+*.md
+.eslint*
+.postcss*
+tsconfig.json

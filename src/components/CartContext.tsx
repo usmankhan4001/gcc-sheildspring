@@ -11,7 +11,7 @@ import {
 import { CartLine } from "@/lib/types";
 import { getProductBySlug } from "@/data/products";
 
-const STORAGE_KEY = "shieldspring-cart";
+const STORAGE_KEY = "agentlume-cart";
 
 interface CartContextValue {
   lines: CartLine[];

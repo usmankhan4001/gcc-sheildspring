@@ -54,10 +54,8 @@ export default function CartPage() {
                 >
                   <ProductImage
                     src={product.image}
-                    palette={product.palette}
-                    category={product.category}
-                    label={product.name}
-                    className="h-full w-full"
+                    alt={product.name}
+                    className="h-full w-full object-cover"
                   />
                 </Link>
                 <div className="flex flex-1 flex-col justify-between">

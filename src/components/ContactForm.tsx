@@ -8,7 +8,7 @@ export default function ContactForm() {
   if (sent) {
     return (
       <div className="rounded-md border border-line bg-paper-2 p-6 text-sm text-ink/80">
-        Thanks for reaching out — our customer care team will reply within one
+        Thanks for reaching out — the Agent Lume team will reply within one
         business day.
       </div>
     );

@@ -1,17 +1,17 @@
 export const site = {
-  name: "Shieldspring",
-  legalName: "Shieldspring Limited",
-  domain: "shieldspring.io",
-  email: "service@shieldspring.io",
-  phone: "+44 7576 578103",
-  phoneHref: "+447576578103",
-  registrationNo: "81147695",
+  name: "Agent Lume",
+  legalName: "Agent Lume Limited",
+  domain: "agentlume.io",
+  email: "service@agentlume.io",
+  phone: "+1 367 202 5511",
+  phoneHref: "+13672025511",
+  registrationNo: "81160869",
   address: {
     line1: "1804, 18/F, Office Plus",
     line2: "93-103 Wing Lok Street",
     line3: "Sheung Wan, Hong Kong",
   },
-  tagline: "Built for the seasons you actually live in.",
+  tagline: "Wear the vibe. Be the wave.",
 };
 
 export const navCategories = [

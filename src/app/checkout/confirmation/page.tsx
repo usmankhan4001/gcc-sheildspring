@@ -19,7 +19,7 @@ function ConfirmationContent() {
 
   useEffect(() => {
     try {
-      const raw = window.localStorage.getItem("shieldspring-last-order");
+      const raw = window.localStorage.getItem("agentlume-last-order");
       // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time hydration from localStorage, unavailable during SSR
       if (raw) setOrder(JSON.parse(raw));
     } catch {
@@ -27,7 +27,7 @@ function ConfirmationContent() {
     }
   }, []);
 
-  const orderNumber = order?.orderNumber ?? orderParam ?? "SS-000000";
+  const orderNumber = order?.orderNumber ?? orderParam ?? "AL-000000";
 
   return (
     <div className="container-page flex flex-col items-center py-24 text-center">

@@ -6,7 +6,7 @@ export default function NewsletterForm() {
   const [subscribed, setSubscribed] = useState(false);
 
   if (subscribed) {
-    return <p className="mx-auto mt-6 max-w-md text-sm font-medium text-paper">You&apos;re on the list — welcome to Shieldspring.</p>;
+    return <p className="mx-auto mt-6 max-w-md text-sm font-medium text-paper">You&apos;re on the list — welcome to the squad.</p>;
   }
 
   return (

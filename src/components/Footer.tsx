@@ -8,23 +8,6 @@ export default function Footer() {
         <div className="md:col-span-1">
           <p className="font-display text-lg font-semibold">{site.name}</p>
           <p className="mt-3 text-sm text-muted">{site.tagline}</p>
-          <div className="mt-6">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted mb-2">Secure Payments</p>
-            <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
-              <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink">VISA</span>
-              <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink">Mastercard</span>
-              <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink">Amex</span>
-              <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink">Apple Pay</span>
-              <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink">Google Pay</span>
-            </div>
-            <p className="mt-2 text-[11px] text-muted flex items-center gap-1">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              </svg>
-              256-bit Encrypted Checkout
-            </p>
-          </div>
         </div>
 
         <div>
@@ -46,13 +29,13 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted">Company &amp; Legal</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted">Company</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <Link href="/about" className="text-ink/80 hover:text-accent">About Us</Link>
+              <Link href="/about" className="text-ink/80 hover:text-accent">About</Link>
             </li>
             <li>
-              <Link href="/contact" className="text-ink/80 hover:text-accent">Contact Support</Link>
+              <Link href="/contact" className="text-ink/80 hover:text-accent">Contact</Link>
             </li>
             <li>
               <Link href="/shipping-returns" className="text-ink/80 hover:text-accent">Shipping &amp; Returns</Link>
@@ -67,21 +50,16 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted">Customer Care</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted">Get in touch</p>
           <ul className="mt-4 space-y-2 text-sm text-ink/80">
             <li>
-              <a href={`mailto:${site.email}`} className="hover:text-accent font-medium">{site.email}</a>
+              <a href={`mailto:${site.email}`} className="hover:text-accent">{site.email}</a>
             </li>
             <li>
-              <a href={`tel:${site.phoneHref}`} className="hover:text-accent font-medium">{site.phone}</a>
-            </li>
-            <li className="text-xs text-muted pt-1">
-              Hours: Mon – Fri: 9:00 AM – 6:00 PM (HKT)
+              <a href={`tel:${site.phoneHref}`} className="hover:text-accent">{site.phone}</a>
             </li>
             <li className="pt-2 text-xs leading-relaxed text-muted">
-              <span className="font-semibold text-ink">{site.legalName}</span>
-              <br />
-              Registration No: {site.registrationNo}
+              {site.legalName}
               <br />
               {site.address.line1}
               <br />
@@ -94,10 +72,23 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-line">
-        <div className="container-page flex flex-col gap-2 py-6 text-xs text-muted md:flex-row md:items-center md:justify-between">
+        <div className="container-page flex flex-col gap-4 py-6 text-xs text-muted md:flex-row md:items-center md:justify-between">
           <p>
-            &copy; {new Date().getFullYear()} {site.legalName}. Company Registration No. {site.registrationNo}. All rights reserved.
+            &copy; {new Date().getFullYear()} {site.legalName}. Company No. {site.registrationNo}. All rights reserved.
           </p>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink/60">VISA</span>
+            <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink/60">Mastercard</span>
+            <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink/60">AMEX</span>
+            <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink/60">Apple Pay</span>
+            <span className="ml-2 flex items-center gap-1 text-[11px]">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0110 0v4" />
+              </svg>
+              SSL Secured
+            </span>
+          </div>
           <p>{site.domain}</p>
         </div>
       </div>

@@ -12,7 +12,6 @@ export interface Product {
   details: string[];
   palette: [string, string];
   image: string;
-  images?: string[];
   isNew?: boolean;
   isBestseller?: boolean;
 }

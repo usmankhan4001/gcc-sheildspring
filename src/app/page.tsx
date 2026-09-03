@@ -2,14 +2,14 @@ import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import ProductImage from "@/components/ProductImage";
 import NewsletterForm from "@/components/NewsletterForm";
-import { products, categoryImages } from "@/data/products";
+import { products } from "@/data/products";
 import { navCategories } from "@/lib/site";
 
-const categoryPalettes: Record<string, [string, string]> = {
-  men: ["#3f4a34", "#22281c"],
-  women: ["#b5522f", "#7a331a"],
-  kids: ["#c9a63f", "#8a6f22"],
-  accessories: ["#6b4a30", "#3c2a1b"],
+const categoryImages: Record<string, string> = {
+  men: "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=600&q=80",
+  women: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=600&q=80",
+  kids: "https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?auto=format&fit=crop&w=600&q=80",
+  accessories: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80",
 };
 
 export default function Home() {
@@ -18,48 +18,46 @@ export default function Home() {
 
   return (
     <div>
-      <section className="border-b border-line bg-ink text-paper">
+      {/* ── Hero ─────────────────────────────────────── */}
+      <section className="border-b border-line bg-surface text-paper">
         <div className="container-page grid gap-10 py-16 md:grid-cols-2 md:items-center md:py-24">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-paper/60">
-              Fall / Winter Collection
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-highlight">
+              New Drop
             </p>
             <h1 className="mt-4 font-display text-4xl leading-tight md:text-5xl">
-              Clothing built for the seasons you actually live in.
+              Drop In. <span className="text-highlight">Stand Out.</span>
             </h1>
             <p className="mt-5 max-w-md text-sm text-paper/75">
-              Shieldspring makes durable, weather-ready essentials for the whole
-              family — field jackets, knitwear, denim, and accessories designed
-              to be worn hard and repaired, not replaced.
+              Trend-forward streetwear, basics, and accessories for the generation
+              that sets the pace. Designed for self-expression, built for everyday wear.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/shop"
-                className="rounded-full bg-paper px-6 py-3 text-sm font-semibold text-ink transition hover:bg-paper-2"
+                className="rounded-full bg-highlight px-6 py-3 text-sm font-semibold text-ink transition hover:bg-accent"
               >
                 Shop All
               </Link>
               <Link
-                href="/shop/men"
+                href="/shop/women"
                 className="rounded-full border border-paper/40 px-6 py-3 text-sm font-semibold text-paper transition hover:border-paper"
               >
                 New Arrivals
               </Link>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-2xl">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <ProductImage
-              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80"
-              palette={["#2f4d3a", "#141712"]}
-              category="men"
-              label="Shieldspring outerwear"
-              className="h-full w-full"
-              priority
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=960&q=80"
+              alt="Agent Lume streetwear collection"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>
       </section>
 
+      {/* ── Shop by Category ─────────────────────────── */}
       <section className="container-page py-16">
         <h2 className="font-display text-2xl">Shop by category</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -71,22 +69,21 @@ export default function Home() {
             >
               <ProductImage
                 src={categoryImages[cat.slug]}
-                palette={categoryPalettes[cat.slug]}
-                category={cat.slug}
-                label={cat.label}
-                className="h-full w-full transition duration-500 group-hover:scale-105"
+                alt={cat.label}
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/80 via-ink/20 to-transparent p-5">
-                <span className="text-xl font-semibold text-paper drop-shadow-md">{cat.label}</span>
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/70 via-transparent to-transparent p-4">
+                <span className="text-lg font-semibold text-paper">{cat.label}</span>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
+      {/* ── Trending Now ─────────────────────────────── */}
       <section className="container-page py-16">
         <div className="flex items-baseline justify-between">
-          <h2 className="font-display text-2xl">Bestsellers</h2>
+          <h2 className="font-display text-2xl">Trending now</h2>
           <Link href="/shop" className="text-sm font-medium text-accent hover:underline">
             View all
           </Link>
@@ -98,21 +95,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Why Agent Lume ────────────────────────────── */}
       <section className="border-y border-line bg-paper-2 py-16">
         <div className="container-page grid gap-10 md:grid-cols-3 md:items-center">
           <div className="md:col-span-1">
-            <h2 className="font-display text-2xl">Made to last, backed to match</h2>
+            <h2 className="font-display text-2xl">Why Agent Lume?</h2>
             <p className="mt-4 text-sm text-muted">
-              Every Shieldspring piece is built from durable natural fibers and
-              tested against real weather. If it fails you, we repair or
-              replace it — no fine print.
+              We make clothes that match your energy — bold, comfortable, and
+              unapologetically you. No fast-fashion waste, just pieces you&apos;ll
+              actually wear.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-3 md:col-span-2">
             {[
-              { title: "Weather-tested", body: "Field-tested fabrics that hold up in wind, rain, and everyday wear." },
-              { title: "30-day returns", body: "Try it on at home. Free, easy returns within 30 days." },
-              { title: "Repair, not replace", body: "Lifetime repair program keeps your gear out of the landfill." },
+              { title: "Sustainable fabrics", body: "Organic cotton, recycled nylon, and materials that respect the planet." },
+              { title: "Free returns", body: "30-day free returns — because shopping should be stress-free." },
+              { title: "Designed for everyone", body: "Inclusive sizing, gender-neutral options, and styles for all ages." },
             ].map((item) => (
               <div key={item.title}>
                 <p className="text-sm font-semibold text-ink">{item.title}</p>
@@ -123,9 +121,10 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── New Drops ─────────────────────────────────── */}
       <section className="container-page py-16">
         <div className="flex items-baseline justify-between">
-          <h2 className="font-display text-2xl">New arrivals</h2>
+          <h2 className="font-display text-2xl">New drops</h2>
           <Link href="/shop" className="text-sm font-medium text-accent hover:underline">
             View all
           </Link>
@@ -137,12 +136,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Newsletter ────────────────────────────────── */}
       <section className="container-page pb-20">
         <div className="rounded-lg bg-accent px-6 py-12 text-center text-paper md:px-16">
-          <h2 className="font-display text-2xl">Join the Shieldspring list</h2>
+          <h2 className="font-display text-2xl">Join the squad</h2>
           <p className="mx-auto mt-3 max-w-md text-sm text-paper/80">
-            New arrivals, restocks, and seasonal care guides. No spam, unsubscribe
-            anytime.
+            New drops, restocks, and exclusive vibes. No spam, unsubscribe anytime.
           </p>
           <NewsletterForm />
         </div>
