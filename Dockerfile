@@ -14,9 +14,9 @@ RUN \
   else echo "Lockfile not found." && npm install; \
   fi
 
-# Stage 2: Application Builder
+# Stage 2: Static Export Builder
 FROM base AS builder
-ARG CACHE_BUST=3
+ARG CACHE_BUST=5
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -32,29 +32,35 @@ RUN \
   else npm run build; \
   fi
 
-# Stage 3: Production Runner
-FROM base AS runner
-WORKDIR /app
-
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
+# Stage 3: Nginx Static Server
+FROM nginx:alpine AS runner
 
 RUN apk add --no-cache curl
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+COPY --from=builder /app/out /usr/share/nginx/html
 
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder --chown=nextjs:nodejs /app/package.json ./
-
-USER nextjs
+RUN printf 'server {\n\
+  listen 3000;\n\
+  server_name _;\n\
+  root /usr/share/nginx/html;\n\
+  index index.html;\n\
+\n\
+  location / {\n\
+    try_files $uri $uri/ $uri.html /index.html;\n\
+  }\n\
+\n\
+  location /_next/static/ {\n\
+    expires 1y;\n\
+    add_header Cache-Control "public, immutable";\n\
+  }\n\
+\n\
+  gzip on;\n\
+  gzip_types text/plain text/css application/json application/javascript text/xml application/xml text/javascript image/svg+xml;\n\
+}' > /etc/nginx/conf.d/default.conf
 
 EXPOSE 3000
 
-HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
   CMD curl -f http://localhost:3000/ || exit 1
 
-CMD ["npx", "next", "start"]
+CMD ["nginx", "-g", "daemon off;"]
