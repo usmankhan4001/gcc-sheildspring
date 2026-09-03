@@ -18,6 +18,12 @@ export const products: Product[] = [
       "Brushed cotton lining through the body",
     ],
     palette: ["#3f4a34", "#22281c"],
+    image: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1000&q=80",
+    ],
     isBestseller: true,
   },
   {
@@ -36,6 +42,12 @@ export const products: Product[] = [
       "Dry clean only",
     ],
     palette: ["#4a4238", "#2a251f"],
+    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+    ],
   },
   {
     slug: "founders-oxford-shirt",
@@ -53,6 +65,12 @@ export const products: Product[] = [
       "Garment washed for softness",
     ],
     palette: ["#dcd6c4", "#a9a28c"],
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441ec157?auto=format&fit=crop&w=1000&q=80",
+    ],
     isNew: true,
   },
   {
@@ -71,6 +89,12 @@ export const products: Product[] = [
       "Rivet reinforced pockets",
     ],
     palette: ["#2c3a52", "#161d29"],
+    image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582552938357-32b906df40cb?auto=format&fit=crop&w=1000&q=80",
+    ],
   },
   {
     slug: "aster-silk-blouse",
@@ -88,6 +112,12 @@ export const products: Product[] = [
       "Hand wash cold",
     ],
     palette: ["#b5522f", "#7a331a"],
+    image: "https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?auto=format&fit=crop&w=1000&q=80",
+    ],
     isNew: true,
   },
   {
@@ -106,6 +136,12 @@ export const products: Product[] = [
       "Side seam pockets",
     ],
     palette: ["#c8bfa4", "#8f8467"],
+    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=1000&q=80",
+    ],
   },
   {
     slug: "spring-canvas-dress",
@@ -123,6 +159,12 @@ export const products: Product[] = [
       "Twin chest pockets",
     ],
     palette: ["#6b7a5e", "#3d4936"],
+    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=80",
+    ],
     isBestseller: true,
   },
   {
@@ -141,6 +183,12 @@ export const products: Product[] = [
       "Hand wash or dry clean",
     ],
     palette: ["#9fb2c4", "#54697c"],
+    image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1000&q=80",
+    ],
   },
   {
     slug: "junior-trail-anorak",
@@ -158,6 +206,11 @@ export const products: Product[] = [
       "Reflective trim for visibility",
     ],
     palette: ["#c9a63f", "#8a6f22"],
+    image: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1000&q=80",
+    ],
     isNew: true,
   },
   {
@@ -176,6 +229,11 @@ export const products: Product[] = [
       "Machine washable",
     ],
     palette: ["#4c6483", "#293b52"],
+    image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=1000&q=80",
+    ],
   },
   {
     slug: "sprout-organic-tee-set",
@@ -193,6 +251,11 @@ export const products: Product[] = [
       "Machine washable",
     ],
     palette: ["#7a8f6b", "#465538"],
+    image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80",
+    ],
   },
   {
     slug: "acorn-rain-boots",
@@ -210,6 +273,11 @@ export const products: Product[] = [
       "Wipe clean",
     ],
     palette: ["#3d5a3a", "#22321f"],
+    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1541597455068-49e3562bdfa4?auto=format&fit=crop&w=1000&q=80",
+    ],
   },
   {
     slug: "waxed-canvas-tote",
@@ -227,6 +295,11 @@ export const products: Product[] = [
       "Solid brass hardware",
     ],
     palette: ["#a9905f", "#6b5936"],
+    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=1000&q=80",
+    ],
     isBestseller: true,
   },
   {
@@ -245,6 +318,11 @@ export const products: Product[] = [
       "Made to age and patina",
     ],
     palette: ["#6b4a30", "#3c2a1b"],
+    image: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=80",
+    ],
   },
   {
     slug: "summit-merino-beanie",
@@ -262,6 +340,11 @@ export const products: Product[] = [
       "Hand wash cold",
     ],
     palette: ["#5c5648", "#302c24"],
+    image: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80",
+    ],
     isNew: true,
   },
   {
@@ -280,6 +363,11 @@ export const products: Product[] = [
       "Magnetic flap closure",
     ],
     palette: ["#5a5f3f", "#333624"],
+    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?auto=format&fit=crop&w=1000&q=80",
+    ],
   },
 ];
 
@@ -288,6 +376,13 @@ export const categoryLabels: Record<string, string> = {
   women: "Women",
   kids: "Kids",
   accessories: "Accessories",
+};
+
+export const categoryImages: Record<string, string> = {
+  men: "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&w=1200&q=80",
+  women: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
+  kids: "https://images.unsplash.com/photo-1471286174890-9c112ffca56a?auto=format&fit=crop&w=1200&q=80",
+  accessories: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=1200&q=80",
 };
 
 export function getProductBySlug(slug: string) {

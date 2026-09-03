@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import ProductImage from "@/components/ProductImage";
+import ProductGallery from "@/components/ProductGallery";
 import ProductCard from "@/components/ProductCard";
 import AddToCartPanel from "@/components/AddToCartPanel";
 import { products, getProductBySlug, getRelatedProducts, categoryLabels } from "@/data/products";
@@ -48,14 +48,13 @@ export default async function ProductPage({
       </nav>
 
       <div className="grid gap-10 lg:grid-cols-2">
-        <div className="aspect-[4/5] overflow-hidden rounded-md bg-paper-2">
-          <ProductImage
-            palette={product.palette}
-            category={product.category}
-            label={product.name}
-            className="h-full w-full"
-          />
-        </div>
+        <ProductGallery
+          images={product.images}
+          primaryImage={product.image}
+          palette={product.palette}
+          category={product.category}
+          name={product.name}
+        />
 
         <div className="lg:sticky lg:top-24 lg:self-start">
           {(product.isNew || product.compareAtPrice) && (

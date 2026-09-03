@@ -53,6 +53,7 @@ export default function CartPage() {
                   className="h-28 w-24 shrink-0 overflow-hidden rounded-md bg-paper-2"
                 >
                   <ProductImage
+                    src={product.image}
                     palette={product.palette}
                     category={product.category}
                     label={product.name}

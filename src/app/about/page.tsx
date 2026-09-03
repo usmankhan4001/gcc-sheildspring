@@ -3,8 +3,8 @@ import ProductImage from "@/components/ProductImage";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: `Learn about ${site.legalName} and the philosophy behind Shieldspring clothing.`,
+  title: "About Us",
+  description: `Learn about ${site.legalName} and the craftsmanship philosophy behind Shieldspring clothing.`,
 };
 
 export default function AboutPage() {
@@ -23,12 +23,14 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="mt-12 aspect-[21/9] overflow-hidden rounded-lg">
+      <div className="mt-12 aspect-[21/9] overflow-hidden rounded-lg shadow-sm">
         <ProductImage
+          src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1920&q=80"
           palette={["#3f4a34", "#141712"]}
           category="men"
-          label="Shieldspring craftsmanship"
+          label="Shieldspring craftsmanship studio"
           className="h-full w-full"
+          priority
         />
       </div>
 
@@ -58,13 +60,18 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="mt-16 rounded-lg bg-paper-2 p-8 text-sm text-muted">
+      <div className="mt-16 rounded-lg bg-paper-2 p-8 text-sm text-muted border border-line">
+        <p className="font-semibold text-ink mb-1">Corporate Registration &amp; Contact</p>
         <p>
-          {site.legalName} (Company No. {site.registrationNo}) is registered at{" "}
+          {site.legalName} (Company Registration No. {site.registrationNo}) is registered at{" "}
           {site.address.line1}, {site.address.line2}, {site.address.line3}. For
-          press, wholesale, or partnership inquiries, reach us at{" "}
-          <a href={`mailto:${site.email}`} className="text-accent hover:underline">
+          customer support, wholesale, or partnership inquiries, reach our team directly at{" "}
+          <a href={`mailto:${site.email}`} className="text-accent font-medium hover:underline">
             {site.email}
+          </a>{" "}
+          or via telephone at{" "}
+          <a href={`tel:${site.phoneHref}`} className="text-accent font-medium hover:underline">
+            {site.phone}
           </a>
           .
         </p>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import ProductImage from "@/components/ProductImage";
 import NewsletterForm from "@/components/NewsletterForm";
-import { products } from "@/data/products";
+import { products, categoryImages } from "@/data/products";
 import { navCategories } from "@/lib/site";
 
 const categoryPalettes: Record<string, [string, string]> = {
@@ -47,12 +47,14 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-2xl">
             <ProductImage
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80"
               palette={["#2f4d3a", "#141712"]}
               category="men"
               label="Shieldspring outerwear"
               className="h-full w-full"
+              priority
             />
           </div>
         </div>
@@ -68,13 +70,14 @@ export default function Home() {
               className="group relative aspect-[3/4] overflow-hidden rounded-md"
             >
               <ProductImage
+                src={categoryImages[cat.slug]}
                 palette={categoryPalettes[cat.slug]}
                 category={cat.slug}
                 label={cat.label}
                 className="h-full w-full transition duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/70 via-transparent to-transparent p-4">
-                <span className="text-lg font-semibold text-paper">{cat.label}</span>
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/80 via-ink/20 to-transparent p-5">
+                <span className="text-xl font-semibold text-paper drop-shadow-md">{cat.label}</span>
               </div>
             </Link>
           ))}
