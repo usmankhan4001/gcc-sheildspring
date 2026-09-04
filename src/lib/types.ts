@@ -12,6 +12,9 @@ export interface Product {
   details: string[];
   palette: [string, string];
   image: string;
+  images?: string[];
+  rating?: number;
+  reviewCount?: number;
   isNew?: boolean;
   isBestseller?: boolean;
 }
@@ -22,3 +25,4 @@ export interface CartLine {
   color: string;
   quantity: number;
 }
+

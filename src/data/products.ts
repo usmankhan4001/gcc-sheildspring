@@ -19,7 +19,13 @@ export const products: Product[] = [
       "Kangaroo pocket, ribbed cuffs",
     ],
     palette: ["#c084fc", "#3b0764"],
-    image: "https://images.unsplash.com/photo-1556821840-3a63f7722d38?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.9,
+    reviewCount: 42,
     isBestseller: true,
   },
   {
@@ -39,6 +45,12 @@ export const products: Product[] = [
     ],
     palette: ["#a3a3a3", "#525252"],
     image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.8,
+    reviewCount: 29,
     isBestseller: true,
   },
   {
@@ -58,6 +70,12 @@ export const products: Product[] = [
     ],
     palette: ["#e9d5ff", "#7c3aed"],
     image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.9,
+    reviewCount: 56,
     isNew: true,
   },
   {
@@ -77,6 +95,12 @@ export const products: Product[] = [
     ],
     palette: ["#404040", "#171717"],
     image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1578932750294-f5075e85f44a?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.7,
+    reviewCount: 18,
   },
 
   // ── Women ──────────────────────────────────────────────
@@ -96,7 +120,13 @@ export const products: Product[] = [
       "Side-seam construction",
     ],
     palette: ["#fda4af", "#be185d"],
-    image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.9,
+    reviewCount: 38,
     isNew: true,
   },
   {
@@ -115,7 +145,13 @@ export const products: Product[] = [
       "Elastic waistband with drawstring",
     ],
     palette: ["#d4d4d8", "#71717a"],
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1552874869-5c39ec9288dc?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.8,
+    reviewCount: 24,
   },
   {
     slug: "oversized-graphic-hoodie",
@@ -134,7 +170,13 @@ export const products: Product[] = [
       "Front kangaroo pocket",
     ],
     palette: ["#fda4af", "#9f1239"],
-    image: "https://images.unsplash.com/photo-1578768079470-0a4a410a4a3a?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 5.0,
+    reviewCount: 64,
     isBestseller: true,
   },
   {
@@ -153,7 +195,13 @@ export const products: Product[] = [
       "Flatlock seam construction",
     ],
     palette: ["#a1a1aa", "#27272a"],
-    image: "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.6,
+    reviewCount: 15,
     isNew: true,
   },
 
@@ -175,6 +223,12 @@ export const products: Product[] = [
     ],
     palette: ["#c4b5fd", "#7c3aed"],
     image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.9,
+    reviewCount: 31,
     isNew: true,
   },
   {
@@ -194,6 +248,12 @@ export const products: Product[] = [
     ],
     palette: ["#fbbf24", "#d97706"],
     image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.8,
+    reviewCount: 22,
   },
   {
     slug: "glow-street-sneakers",
@@ -211,7 +271,13 @@ export const products: Product[] = [
       "Cushioned insole",
     ],
     palette: ["#e0e7ff", "#4f46e5"],
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 5.0,
+    reviewCount: 73,
     isBestseller: true,
   },
   {
@@ -230,7 +296,13 @@ export const products: Product[] = [
       "Adjustable chin strap",
     ],
     palette: ["#fde047", "#a16207"],
-    image: "https://images.unsplash.com/photo-1588850561407-ed78c334e67a?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.7,
+    reviewCount: 19,
   },
 
   // ── Accessories ────────────────────────────────────────
@@ -250,7 +322,13 @@ export const products: Product[] = [
       "YKK zippers",
     ],
     palette: ["#a3e635", "#365314"],
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.9,
+    reviewCount: 88,
     isBestseller: true,
   },
   {
@@ -270,6 +348,12 @@ export const products: Product[] = [
     ],
     palette: ["#d4d4d8", "#71717a"],
     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1559128625-ca4df9a6e17b?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.8,
+    reviewCount: 45,
   },
   {
     slug: "lume-crew-socks",
@@ -287,7 +371,13 @@ export const products: Product[] = [
       "Ribbed leg band",
     ],
     palette: ["#f0abfc", "#a21caf"],
-    image: "https://images.unsplash.com/photo-1586350977771-b3b0abd50c87?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1631180543602-727e1197619d?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1631180543602-727e1197619d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1626379616459-b2ce1d9decbc?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.9,
+    reviewCount: 62,
   },
   {
     slug: "reflective-phone-pouch",
@@ -305,7 +395,13 @@ export const products: Product[] = [
       "Magnetic snap closure",
     ],
     palette: ["#a1a1aa", "#27272a"],
-    image: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1680576555742-9a3134da9ef7?auto=format&fit=crop&w=800&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1680576555742-9a3134da9ef7?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1657603465180-d0fe7b61909b?auto=format&fit=crop&w=800&q=80",
+    ],
+    rating: 4.7,
+    reviewCount: 27,
   },
 ];
 
@@ -325,3 +421,4 @@ export function getRelatedProducts(product: Product, count = 4) {
     .filter((p) => p.category === product.category && p.slug !== product.slug)
     .slice(0, count);
 }
+
