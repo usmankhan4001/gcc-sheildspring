@@ -4,14 +4,14 @@ import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "All Products",
-  description: "Browse the full Shieldspring collection of clothing and accessories.",
+  description: "Browse the full Agent Lume collection of streetwear, basics, and accessories.",
 };
 
 export default function ShopPage() {
   return (
     <ShopGrid
       title="All Products"
-      description="Field jackets, knitwear, denim, and accessories for men, women, and kids — built to last a lot longer than a season."
+      description="Streetwear, basics, and accessories for men, women, and kids — designed for self-expression, built for everyday wear."
       products={products}
     />
   );

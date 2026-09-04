@@ -20,8 +20,8 @@ export async function generateMetadata({
   return {
     title: label ? `${label}'s Clothing` : "Shop",
     description: label
-      ? `Shop the Shieldspring ${label.toLowerCase()} collection.`
-      : "Shop Shieldspring's clothing collection.",
+      ? `Shop the Agent Lume ${label.toLowerCase()} collection.`
+      : "Shop Agent Lume's clothing collection.",
   };
 }
 

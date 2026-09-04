@@ -8,7 +8,7 @@ import { navCategories } from "@/lib/site";
 const categoryImages: Record<string, string> = {
   men: "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=600&q=80",
   women: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=600&q=80",
-  kids: "https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?auto=format&fit=crop&w=600&q=80",
+  kids: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80",
   accessories: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80",
 };
 
@@ -39,12 +39,12 @@ export default function Home() {
               >
                 Shop All
               </Link>
-              <Link
-                href="/shop/women"
-                className="rounded-full border border-paper/40 px-6 py-3 text-sm font-semibold text-paper transition hover:border-paper"
-              >
-                New Arrivals
-              </Link>
+                <Link
+                  href="/shop"
+                  className="rounded-full border border-paper/40 px-6 py-3 text-sm font-semibold text-paper transition hover:border-paper"
+                >
+                  New Arrivals
+                </Link>
             </div>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg">

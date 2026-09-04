@@ -76,7 +76,7 @@ export const products: Product[] = [
       "Adjustable hood and hem",
     ],
     palette: ["#404040", "#171717"],
-    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=800&q=80",
   },
 
   // ── Women ──────────────────────────────────────────────
@@ -96,7 +96,7 @@ export const products: Product[] = [
       "Side-seam construction",
     ],
     palette: ["#fda4af", "#be185d"],
-    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&q=80",
     isNew: true,
   },
   {
@@ -193,7 +193,7 @@ export const products: Product[] = [
       "Elastic waistband",
     ],
     palette: ["#fbbf24", "#d97706"],
-    image: "https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
   },
   {
     slug: "glow-street-sneakers",

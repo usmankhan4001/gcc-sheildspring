@@ -11,7 +11,7 @@ const SHIPPING_COST = 8;
 
 function generateOrderNumber() {
   const random = Math.floor(100000 + Math.random() * 900000);
-  return `SS-${random}`;
+  return `AL-${random}`;
 }
 
 export default function CheckoutPage() {
@@ -36,7 +36,7 @@ export default function CheckoutPage() {
     };
 
     try {
-      window.localStorage.setItem("shieldspring-last-order", JSON.stringify(snapshot));
+      window.localStorage.setItem("agentlume-last-order", JSON.stringify(snapshot));
     } catch {
       // ignore storage errors
     }
