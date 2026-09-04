@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navCategories, site } from "@/lib/site";
+import PaymentBadges from "@/components/PaymentBadges";
 
 export default function Footer() {
   return (
@@ -76,22 +77,11 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {site.legalName}. Company No. {site.registrationNo}. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink/60">VISA</span>
-            <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink/60">Mastercard</span>
-            <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink/60">AMEX</span>
-            <span className="rounded border border-line bg-paper px-2 py-1 font-semibold text-ink/60">Apple Pay</span>
-            <span className="ml-2 flex items-center gap-1 text-[11px]">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                <path d="M7 11V7a5 5 0 0110 0v4" />
-              </svg>
-              SSL Secured
-            </span>
-          </div>
+          <PaymentBadges />
           <p>{site.domain}</p>
         </div>
       </div>
     </footer>
   );
 }
+

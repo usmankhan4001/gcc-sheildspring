@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/components/CartContext";
 import { getProductBySlug } from "@/data/products";
+import PaymentBadges from "@/components/PaymentBadges";
 
 const FREE_SHIPPING_THRESHOLD = 120;
 const SHIPPING_COST = 8;
@@ -189,13 +190,9 @@ export default function CheckoutPage() {
 
           {/* Payment Details */}
           <fieldset className="rounded-2xl border border-line bg-paper p-6 shadow-sm">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <legend className="font-display text-lg font-bold text-ink px-2">3. Payment Details</legend>
-              <div className="flex items-center gap-1.5 text-xs text-muted">
-                <span className="rounded border border-line bg-paper-2 px-1.5 py-0.5 text-[10px] font-bold text-ink">VISA</span>
-                <span className="rounded border border-line bg-paper-2 px-1.5 py-0.5 text-[10px] font-bold text-ink">MC</span>
-                <span className="rounded border border-line bg-paper-2 px-1.5 py-0.5 text-[10px] font-bold text-ink">AMEX</span>
-              </div>
+              <PaymentBadges showSsl={false} />
             </div>
             <p className="mt-2 text-xs text-muted flex items-center gap-1.5">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-600">
