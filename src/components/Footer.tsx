@@ -63,15 +63,53 @@ export default function Footer() {
               <a href={`tel:${site.phoneHref}`} className="hover:text-accent">{site.phone}</a>
             </li>
             <li className="pt-2 text-xs leading-relaxed text-muted">
-              {site.legalName}
-              <br />
-              {site.address.line1}
-              <br />
-              {site.address.line2}
-              <br />
-              {site.address.line3}
+              {site.support.hours}
             </li>
           </ul>
+        </div>
+      </div>
+
+      {/* Legal entity disclosure — payment providers check that the trading
+          name, legal entity, registration number and registered address are
+          all stated together and match the application. */}
+      <div className="border-t border-line">
+        <div className="container-page py-10">
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted">Company</p>
+          <p className="mt-4 text-sm leading-relaxed text-ink/80">
+            {site.name} is operated by {site.legalName}
+          </p>
+          <dl className="mt-4 space-y-2 text-sm">
+            <div className="flex flex-wrap gap-x-2">
+              <dt className="text-muted">Business Registration No.:</dt>
+              <dd className="text-ink/80">{site.registrationNo}</dd>
+            </div>
+            <div className="flex flex-wrap gap-x-2">
+              <dt className="text-muted">Place of registration:</dt>
+              <dd className="text-ink/80">{site.jurisdiction}</dd>
+            </div>
+            <div className="flex flex-wrap gap-x-2">
+              <dt className="text-muted">Registered Address:</dt>
+              <dd className="text-ink/80">
+                {site.address.line1}, {site.address.line2}, {site.address.line3}
+              </dd>
+            </div>
+            <div className="flex flex-wrap gap-x-2">
+              <dt className="text-muted">Email:</dt>
+              <dd>
+                <a href={`mailto:${site.email}`} className="text-ink/80 hover:text-accent">
+                  {site.email}
+                </a>
+              </dd>
+            </div>
+            <div className="flex flex-wrap gap-x-2">
+              <dt className="text-muted">Phone:</dt>
+              <dd>
+                <a href={`tel:${site.phoneHref}`} className="text-ink/80 hover:text-accent">
+                  {site.phone}
+                </a>
+              </dd>
+            </div>
+          </dl>
         </div>
       </div>
 
