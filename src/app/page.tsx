@@ -68,20 +68,20 @@ export default function Home() {
       <section className="border-b border-line bg-paper-2 py-6">
         <div className="container-page grid grid-cols-2 gap-4 text-center sm:grid-cols-4">
           <div className="flex flex-col items-center justify-center p-2">
-            <p className="text-xs font-semibold text-ink">Free Express Shipping</p>
-            <p className="text-[11px] text-muted">On all orders over $120</p>
+            <p className="text-xs font-semibold text-ink">Free Standard Shipping</p>
+            <p className="text-[11px] text-muted">On orders over $120</p>
           </div>
           <div className="flex flex-col items-center justify-center p-2">
-            <p className="text-xs font-semibold text-ink">30-Day Hassle-Free Returns</p>
-            <p className="text-[11px] text-muted">Zero stress guarantee</p>
+            <p className="text-xs font-semibold text-ink">30-Day Returns</p>
+            <p className="text-[11px] text-muted">On unworn items</p>
           </div>
           <div className="flex flex-col items-center justify-center p-2">
-            <p className="text-xs font-semibold text-ink">Sustainable Fabrics</p>
-            <p className="text-[11px] text-muted">100% organic &amp; recycled</p>
+            <p className="text-xs font-semibold text-ink">Heavyweight Fabrics</p>
+            <p className="text-[11px] text-muted">Cotton &amp; cotton blends</p>
           </div>
           <div className="flex flex-col items-center justify-center p-2">
-            <p className="text-xs font-semibold text-ink">Encrypted 256-Bit SSL</p>
-            <p className="text-[11px] text-muted">Safe &amp; secure checkout</p>
+            <p className="text-xs font-semibold text-ink">Secure Checkout</p>
+            <p className="text-[11px] text-muted">Processed by Airwallex</p>
           </div>
         </div>
       </section>
@@ -151,12 +151,12 @@ export default function Home() {
           <div className="grid gap-6 sm:grid-cols-3 md:col-span-2">
             {[
               {
-                title: "Sustainable fabrics",
-                body: "Heavyweight organic cotton, recycled nylon blends, and low-impact dyes that respect the planet.",
+                title: "Heavyweight fabrics",
+                body: "Substantial cotton and cotton-blend jersey, fleece and ripstop chosen for durability and everyday wear.",
               },
               {
-                title: "Free 30-day returns",
-                body: "Try it on at home risk-free with our prepaid return labels and quick automated refunds.",
+                title: "30-day returns",
+                body: "Unworn items with tags attached can be returned within 30 days of delivery. See our Refund Policy for details.",
               },
               {
                 title: "Inclusive sizing",
@@ -190,50 +190,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Customer Reviews / Social Proof ───────────── */}
+      {/* ── Shop With Confidence ─────────────────────── */}
       <section className="border-t border-line bg-paper-2 py-16">
         <div className="container-page">
           <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-accent">Real Reviews</p>
-            <h2 className="mt-2 font-display text-2xl md:text-3xl">Loved by 10,000+ happy customers</h2>
-            <div className="mt-3 flex items-center justify-center gap-1 text-amber-500">
-              {"★".repeat(5)}
-              <span className="ml-2 text-sm font-semibold text-ink">4.9 / 5.0 Average Rating</span>
-            </div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent">Shop With Confidence</p>
+            <h2 className="mt-2 font-display text-2xl md:text-3xl">Everything in writing</h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-muted">
+              Our delivery times, return window and refund process are published in
+              full before you pay — no small print.
+            </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               {
-                quote: "The Neon Street Hoodie is easily the highest quality piece in my wardrobe right now. The fabric weight is unmatched.",
-                author: "Alex M.",
-                verified: "Verified Buyer",
-                product: "Neon Street Hoodie",
+                title: "Shipping & delivery",
+                body: "Standard and express options with published delivery estimates and dispatch times.",
+                href: "/shipping-returns",
+                cta: "Shipping details",
               },
               {
-                quote: "Fit and fabric on the High-Rise Track Pants are top tier. Super comfortable for all-day wear and great streetwear aesthetic.",
-                author: "Sarah K.",
-                verified: "Verified Buyer",
-                product: "High-Rise Track Pants",
+                title: "Returns & refunds",
+                body: "30 days to return unworn items, with a clear explanation of how refunds are issued.",
+                href: "/refund-policy",
+                cta: "Refund Policy",
               },
               {
-                quote: "Shipping arrived in 3 days, beautifully packaged. The Crossbody Tech Bag is my everyday essential now.",
-                author: "Jordan T.",
-                verified: "Verified Buyer",
-                product: "Crossbody Tech Bag",
+                title: "Your data",
+                body: "How we collect, store and use your personal information, and how to ask us to delete it.",
+                href: "/privacy",
+                cta: "Privacy Policy",
               },
-            ].map((review, i) => (
-              <div key={i} className="flex flex-col justify-between rounded-xl border border-line bg-paper p-6 shadow-sm">
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col justify-between rounded-xl border border-line bg-paper p-6 shadow-sm">
                 <div>
-                  <div className="flex text-amber-500 text-sm">{"★".repeat(5)}</div>
-                  <p className="mt-3 text-sm text-ink/90 leading-relaxed italic">&ldquo;{review.quote}&rdquo;</p>
+                  <p className="font-display text-base font-semibold text-ink">{item.title}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
                 </div>
-                <div className="mt-6 border-t border-line pt-4 flex items-center justify-between text-xs">
-                  <div>
-                    <span className="font-semibold text-ink">{review.author}</span>
-                    <span className="ml-2 text-emerald-600 font-medium">{review.verified}</span>
-                  </div>
-                  <span className="text-muted">{review.product}</span>
-                </div>
+                <Link
+                  href={item.href}
+                  className="mt-6 border-t border-line pt-4 text-xs font-semibold text-accent hover:underline"
+                >
+                  {item.cta} &rarr;
+                </Link>
               </div>
             ))}
           </div>

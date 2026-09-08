@@ -39,10 +39,10 @@ export default function AboutPage() {
           </p>
         </div>
         <div>
-          <h2 className="font-display text-lg">Sustainable by default</h2>
+          <h2 className="font-display text-lg">Built to last</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            We use organic cotton, recycled materials, and low-impact dyes because
-            looking good and doing good aren&apos;t mutually exclusive.
+            We pick substantial fabrics and reinforced seams so pieces hold their
+            shape and colour through repeated wear and washing.
           </p>
         </div>
         <div>

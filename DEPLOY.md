@@ -242,11 +242,28 @@ Amazon's CI/CD hosting for frontend apps.
 
 If you add environment variables later (e.g., for payment integration), set them in your platform's dashboard:
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `DATABASE_URL` | Database connection string | `sqlite:///./dev.db` |
-| `STRIPE_SECRET_KEY` | Stripe secret key | `sk_test_...` |
-| `NEXT_PUBLIC_STRIPE_KEY` | Stripe publishable key | `pk_test_...` |
+| Variable | Required | Description | Example |
+|----------|----------|-------------|---------|
+| `AIRWALLEX_CLIENT_ID` | Yes | Airwallex client ID (secret — server only) | `your_client_id` |
+| `AIRWALLEX_API_KEY` | Yes | Airwallex API key (secret — server only) | `your_api_key` |
+| `NEXT_PUBLIC_AIRWALLEX_ENV` | Yes | `demo` for sandbox, `prod` for live. Card fields are disabled when unset. | `demo` |
+| `AIRWALLEX_API_BASE` | No | Override the Airwallex API base URL | `https://api.airwallex.com/api/v1` |
+
+> Never prefix the client ID or API key with `NEXT_PUBLIC_` — that would ship
+> your Airwallex credentials to the browser.
+
+### Running with Docker
+
+The image now runs `next start` (a Node server) rather than serving a static
+Nginx export, because the `/api/payment-intent` route must run server-side.
+
+```bash
+docker run -d -p 3000:3000 \
+  -e AIRWALLEX_CLIENT_ID=your_client_id \
+  -e AIRWALLEX_API_KEY=your_api_key \
+  -e NEXT_PUBLIC_AIRWALLEX_ENV=demo \
+  --name agent-lume agent-lume
+```
 
 ---
 

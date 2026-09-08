@@ -46,24 +46,55 @@ export default function TermsPage() {
 
         <Section title="3. Pricing & payment">
           <p>
-            All prices are listed in US dollars and are subject to change
-            without notice. Applicable taxes and duties are calculated at
-            checkout. Payment is processed securely at the time of order.
+            All prices are listed in US dollars (USD) and are charged in USD.
+            Prices are subject to change without notice, but the price you see
+            at checkout is the price you pay. Applicable taxes and duties are
+            calculated at checkout.
+          </p>
+          <p>
+            Card payments are processed by Airwallex. By placing an order you
+            authorise us, through our payment provider, to charge your card for
+            the total shown at checkout. {site.legalName} does not store your
+            full card number, expiry date or security code.
           </p>
         </Section>
 
-        <Section title="4. Shipping, returns & repairs">
+        <Section title="4. Shipping, returns & refunds">
           <p>
-            Shipping timelines and our 30-day return policy are described in
-            full on our{" "}
+            Shipping options, delivery estimates and return eligibility are set
+            out on our{" "}
             <a href="/shipping-returns" className="text-accent hover:underline">
               Shipping &amp; Returns
             </a>{" "}
-            page, which forms part of these Terms.
+            page and in our{" "}
+            <a href="/refund-policy" className="text-accent hover:underline">
+              Refund Policy
+            </a>
+            , both of which form part of these Terms.
           </p>
         </Section>
 
-        <Section title="5. Intellectual property">
+        <Section title="5. Cancelling an order">
+          <p>
+            You may cancel or amend an order at no cost any time before it has
+            been dispatched by emailing{" "}
+            <a href={`mailto:${site.email}`} className="text-accent hover:underline">
+              {site.email}
+            </a>
+            . Once dispatched, an order cannot be cancelled but may be returned
+            under our Refund Policy.
+          </p>
+        </Section>
+
+        <Section title="6. Payment disputes & chargebacks">
+          <p>
+            If something has gone wrong with your order, please contact us
+            before raising a dispute with your bank so we can resolve it
+            directly. We respond to all enquiries {site.support.responseTime}.
+          </p>
+        </Section>
+
+        <Section title="7. Intellectual property">
           <p>
             All content on this site — including product designs, photography,
             text, and the Agent Lume name and logo — is the property of{" "}
@@ -72,7 +103,7 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section title="6. Limitation of liability">
+        <Section title="8. Limitation of liability">
           <p>
             To the fullest extent permitted by law, {site.legalName} shall not
             be liable for any indirect, incidental, or consequential damages
@@ -80,7 +111,7 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section title="7. Governing law">
+        <Section title="9. Governing law">
           <p>
             These Terms are governed by the laws of Hong Kong, without regard
             to conflict of law principles. Any disputes shall be subject to
@@ -88,7 +119,7 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section title="8. Contact">
+        <Section title="10. Contact">
           <p>
             Questions about these Terms can be sent to{" "}
             <a href={`mailto:${site.email}`} className="text-accent hover:underline">

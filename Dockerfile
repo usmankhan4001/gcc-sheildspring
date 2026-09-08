@@ -32,35 +32,31 @@ RUN \
   else npm run build; \
   fi
 
-# Stage 3: Nginx Static Server
-FROM nginx:alpine AS runner
+# Stage 3: Node Server
+#
+# The app is no longer a static export: creating an Airwallex PaymentIntent
+# requires a server-side call using a secret API key, so we run `next start`
+# instead of serving `out/` with Nginx.
+FROM base AS runner
 
 RUN apk add --no-cache curl
 
-COPY --from=builder /app/out /usr/share/nginx/html
+WORKDIR /app
 
-RUN printf 'server {\n\
-  listen 3000;\n\
-  server_name _;\n\
-  root /usr/share/nginx/html;\n\
-  index index.html;\n\
-\n\
-  location / {\n\
-    try_files $uri $uri/ $uri.html /index.html;\n\
-  }\n\
-\n\
-  location /_next/static/ {\n\
-    expires 1y;\n\
-    add_header Cache-Control "public, immutable";\n\
-  }\n\
-\n\
-  gzip on;\n\
-  gzip_types text/plain text/css application/json application/javascript text/xml application/xml text/javascript image/svg+xml;\n\
-}' > /etc/nginx/conf.d/default.conf
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
+
+COPY --from=deps /app/node_modules ./node_modules
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/next.config.ts ./next.config.ts
 
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
   CMD curl -f http://localhost:3000/ || exit 1
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]

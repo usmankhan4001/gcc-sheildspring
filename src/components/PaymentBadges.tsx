@@ -76,12 +76,22 @@ export function GooglePayIcon({ className = "h-5 w-auto" }: { className?: string
   );
 }
 
+/**
+ * Only advertise payment methods that are actually enabled on the account.
+ * Showing wallet badges for methods we cannot accept is a card-network
+ * compliance violation and a common reason for onboarding rejection.
+ *
+ * Set `showWallets` once Apple Pay / Google Pay are live on the Airwallex
+ * account.
+ */
 export default function PaymentBadges({
   className = "",
   showSsl = true,
+  showWallets = false,
 }: {
   className?: string;
   showSsl?: boolean;
+  showWallets?: boolean;
 }) {
   return (
     <div className={`flex flex-wrap items-center gap-2 ${className}`}>
@@ -94,12 +104,16 @@ export default function PaymentBadges({
       <div className="h-6 w-9 overflow-hidden rounded border border-line/80 bg-paper shadow-xs transition hover:scale-105">
         <AmexIcon className="h-full w-full object-cover" />
       </div>
-      <div className="h-6 w-9 overflow-hidden rounded border border-line/80 bg-paper shadow-xs transition hover:scale-105">
-        <ApplePayIcon className="h-full w-full object-cover" />
-      </div>
-      <div className="h-6 w-9 overflow-hidden rounded border border-line/80 bg-paper shadow-xs transition hover:scale-105">
-        <GooglePayIcon className="h-full w-full object-cover" />
-      </div>
+      {showWallets && (
+        <>
+          <div className="h-6 w-9 overflow-hidden rounded border border-line/80 bg-paper shadow-xs transition hover:scale-105">
+            <ApplePayIcon className="h-full w-full object-cover" />
+          </div>
+          <div className="h-6 w-9 overflow-hidden rounded border border-line/80 bg-paper shadow-xs transition hover:scale-105">
+            <GooglePayIcon className="h-full w-full object-cover" />
+          </div>
+        </>
+      )}
       {showSsl && (
         <span className="ml-1.5 flex items-center gap-1 text-[11px] font-semibold text-muted">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-emerald-600">

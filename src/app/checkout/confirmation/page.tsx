@@ -39,8 +39,10 @@ function ConfirmationContent() {
       <h1 className="mt-6 font-display text-3xl">Thank you for your order</h1>
       <p className="mt-3 text-sm text-muted">
         Order <span className="font-semibold text-ink">{orderNumber}</span> has been
-        received. A confirmation email has been sent to{" "}
-        {order?.email ? <span className="font-medium text-ink">{String(order.email)}</span> : "your inbox"}.
+        received and your payment was successful. We&apos;ll email your receipt and
+        tracking details to{" "}
+        {order?.email ? <span className="font-medium text-ink">{String(order.email)}</span> : "your inbox"}{" "}
+        once your order is dispatched.
       </p>
       {order && (
         <p className="mt-1 text-sm text-muted">

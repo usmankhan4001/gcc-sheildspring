@@ -42,6 +42,9 @@ export default function Footer() {
               <Link href="/shipping-returns" className="text-ink/80 hover:text-accent">Shipping &amp; Returns</Link>
             </li>
             <li>
+              <Link href="/refund-policy" className="text-ink/80 hover:text-accent">Refund Policy</Link>
+            </li>
+            <li>
               <Link href="/terms" className="text-ink/80 hover:text-accent">Terms of Service</Link>
             </li>
             <li>

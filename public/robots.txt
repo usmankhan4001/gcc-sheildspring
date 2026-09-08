@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shieldspring.io/sitemap.xml
+Sitemap: https://agentlume.io/sitemap.xml

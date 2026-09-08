@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur">
       <div className="border-b border-line bg-ink py-2 text-center text-xs font-medium tracking-wide text-paper">
-        Free express shipping on orders over $120 &middot; 30-day hassle-free returns
+        Free standard shipping on orders over $120 &middot; 30-day returns
       </div>
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <button
