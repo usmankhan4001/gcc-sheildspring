@@ -2,11 +2,20 @@ import Link from "next/link";
 import { navCategories, site } from "@/lib/site";
 import PaymentBadges from "@/components/PaymentBadges";
 
+const policyLinks = [
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/shipping-returns", label: "Shipping & Returns" },
+  { href: "/refund-policy", label: "Refund Policy" },
+  { href: "/terms", label: "Terms of Service" },
+  { href: "/privacy", label: "Privacy Policy" },
+];
+
 export default function Footer() {
   return (
     <footer className="mt-24 border-t border-line bg-paper-2">
       <div className="container-page grid gap-10 py-14 md:grid-cols-4">
-        <div className="md:col-span-1">
+        <div>
           <p className="font-display text-lg font-semibold">{site.name}</p>
           <p className="mt-3 text-sm text-muted">{site.tagline}</p>
         </div>
@@ -30,70 +39,42 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted">Company</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted">Policies</p>
           <ul className="mt-4 space-y-2 text-sm">
-            <li>
-              <Link href="/about" className="text-ink/80 hover:text-accent">About</Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-ink/80 hover:text-accent">Contact</Link>
-            </li>
-            <li>
-              <Link href="/shipping-returns" className="text-ink/80 hover:text-accent">Shipping &amp; Returns</Link>
-            </li>
-            <li>
-              <Link href="/refund-policy" className="text-ink/80 hover:text-accent">Refund Policy</Link>
-            </li>
-            <li>
-              <Link href="/terms" className="text-ink/80 hover:text-accent">Terms of Service</Link>
-            </li>
-            <li>
-              <Link href="/privacy" className="text-ink/80 hover:text-accent">Privacy Policy</Link>
-            </li>
+            {policyLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="text-ink/80 hover:text-accent">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* Legal entity disclosure — payment providers check that the trading
+            name, legal entity, registration number and registered address are
+            all stated together and match the application. */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted">Get in touch</p>
-          <ul className="mt-4 space-y-2 text-sm text-ink/80">
-            <li>
-              <a href={`mailto:${site.email}`} className="hover:text-accent">{site.email}</a>
-            </li>
-            <li>
-              <a href={`tel:${site.phoneHref}`} className="hover:text-accent">{site.phone}</a>
-            </li>
-            <li className="pt-2 text-xs leading-relaxed text-muted">
-              {site.support.hours}
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Legal entity disclosure — payment providers check that the trading
-          name, legal entity, registration number and registered address are
-          all stated together and match the application. */}
-      <div className="border-t border-line">
-        <div className="container-page py-10">
           <p className="text-xs font-semibold uppercase tracking-widest text-muted">Company</p>
           <p className="mt-4 text-sm leading-relaxed text-ink/80">
             {site.name} is operated by {site.legalName}
           </p>
-          <dl className="mt-4 space-y-2 text-sm">
-            <div className="flex flex-wrap gap-x-2">
+          <dl className="mt-3 space-y-2 text-sm">
+            <div>
               <dt className="text-muted">Business Registration No.:</dt>
               <dd className="text-ink/80">{site.registrationNo}</dd>
             </div>
-            <div className="flex flex-wrap gap-x-2">
+            <div>
               <dt className="text-muted">Place of registration:</dt>
               <dd className="text-ink/80">{site.jurisdiction}</dd>
             </div>
-            <div className="flex flex-wrap gap-x-2">
+            <div>
               <dt className="text-muted">Registered Address:</dt>
               <dd className="text-ink/80">
                 {site.address.line1}, {site.address.line2}, {site.address.line3}
               </dd>
             </div>
-            <div className="flex flex-wrap gap-x-2">
+            <div>
               <dt className="text-muted">Email:</dt>
               <dd>
                 <a href={`mailto:${site.email}`} className="text-ink/80 hover:text-accent">
@@ -101,7 +82,7 @@ export default function Footer() {
                 </a>
               </dd>
             </div>
-            <div className="flex flex-wrap gap-x-2">
+            <div>
               <dt className="text-muted">Phone:</dt>
               <dd>
                 <a href={`tel:${site.phoneHref}`} className="text-ink/80 hover:text-accent">
@@ -125,4 +106,3 @@ export default function Footer() {
     </footer>
   );
 }
-
