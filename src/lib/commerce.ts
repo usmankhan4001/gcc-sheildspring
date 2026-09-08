@@ -41,7 +41,6 @@ export function shippingCostFor(
 ): number {
   const option = SHIPPING_OPTIONS.find((o) => o.id === optionId);
   if (!option) return 0;
-  if (discountedSubtotal === 0) return 0;
   if (option.freeOverThreshold && discountedSubtotal >= FREE_SHIPPING_THRESHOLD) {
     return 0;
   }
