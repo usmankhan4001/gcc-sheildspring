@@ -5,6 +5,17 @@ const AIRWALLEX_API_BASE =
   process.env.AIRWALLEX_API_BASE ?? "https://api.airwallex.com/api/v1";
 
 /**
+ * Hosted Checkout page the customer is redirected to.
+ *
+ * `{id}` is replaced with the PaymentIntent id and `{clientSecret}` with its
+ * client secret. Override this if Airwallex gives you a different path —
+ * it is the only value that needs changing.
+ */
+const CHECKOUT_URL_TEMPLATE =
+  process.env.AIRWALLEX_CHECKOUT_URL_TEMPLATE ??
+  "https://checkout.airwallex.com/#/standalone/{id}?client_secret={clientSecret}";
+
+/**
  * Airwallex access tokens are valid for a short window, so we cache one per
  * process instead of re-authenticating on every checkout.
  */
@@ -98,7 +109,7 @@ export async function POST(request: Request) {
         currency: currency.code,
         merchant_order_id: body.orderNumber,
         descriptor: "AGENTLUME",
-        return_url: `${origin}/checkout/confirmation`,
+        return_url: `${origin}/checkout/confirmation?order=${encodeURIComponent(body.orderNumber)}`,
         order: {
           type: "physical_goods",
           products: (body.lines ?? []).map((line) => ({
@@ -135,10 +146,17 @@ export async function POST(request: Request) {
       );
     }
 
-    // Only the intent id and client_secret are safe to expose to the browser.
+    const checkoutUrl = CHECKOUT_URL_TEMPLATE.replace("{id}", intent.id).replace(
+      "{clientSecret}",
+      encodeURIComponent(intent.client_secret),
+    );
+
+    // Only the intent id, client secret and hosted checkout URL are safe to
+    // expose to the browser. Never return the API key or access token.
     return NextResponse.json({
       id: intent.id,
       clientSecret: intent.client_secret,
+      checkoutUrl,
     });
   } catch (error) {
     console.error("Payment intent error", error);
@@ -146,5 +164,39 @@ export async function POST(request: Request) {
       { error: "Could not initialise payment" },
       { status: 500 },
     );
+  }
+}
+
+/**
+ * Lets the confirmation page verify a payment actually succeeded after the
+ * customer is redirected back from Hosted Checkout, instead of assuming it did.
+ */
+export async function GET(request: Request) {
+  const id = new URL(request.url).searchParams.get("id");
+
+  if (!id) {
+    return NextResponse.json({ error: "Missing intent id" }, { status: 400 });
+  }
+
+  try {
+    const token = await getAccessToken();
+
+    const res = await fetch(`${AIRWALLEX_API_BASE}/pa/payment_intents/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    if (!res.ok) {
+      return NextResponse.json({ error: "Could not check payment" }, { status: 502 });
+    }
+
+    const intent = (await res.json()) as { id?: string; status?: string };
+
+    return NextResponse.json({
+      id: intent.id ?? id,
+      status: intent.status ?? "UNKNOWN",
+    });
+  } catch (error) {
+    console.error("Payment status error", error);
+    return NextResponse.json({ error: "Could not check payment" }, { status: 500 });
   }
 }

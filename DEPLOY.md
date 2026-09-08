@@ -247,7 +247,12 @@ If you add environment variables later (e.g., for payment integration), set them
 | `AIRWALLEX_CLIENT_ID` | Yes | Airwallex client ID (secret — server only) | `your_client_id` |
 | `AIRWALLEX_API_KEY` | Yes | Airwallex API key (secret — server only) | `your_api_key` |
 | `NEXT_PUBLIC_AIRWALLEX_ENV` | Yes | `demo` for sandbox, `prod` for live. Card fields are disabled when unset. | `demo` |
+| `NEXT_PUBLIC_AIRWALLEX_CHECKOUT_MODE` | No | `embedded` (default) renders an Airwallex card field on the page. `hosted` redirects to Airwallex Hosted Checkout. | `hosted` |
+| `AIRWALLEX_CHECKOUT_URL_TEMPLATE` | No | Hosted Checkout URL. `{id}` and `{clientSecret}` are substituted. | `https://checkout.airwallex.com/#/standalone/{id}?client_secret={clientSecret}` |
 | `AIRWALLEX_API_BASE` | No | Override the Airwallex API base URL | `https://api.airwallex.com/api/v1` |
+
+> `NEXT_PUBLIC_*` variables are baked into the bundle at build time. Set them
+> before building, then rebuild — changing them afterwards has no effect.
 
 > Never prefix the client ID or API key with `NEXT_PUBLIC_` — that would ship
 > your Airwallex credentials to the browser.

@@ -20,6 +20,14 @@ import {
 const AIRWALLEX_SDK_URL = "https://static.airwallex.com/components/sdk/v1/index.js";
 const AIRWALLEX_ENV = process.env.NEXT_PUBLIC_AIRWALLEX_ENV ?? "";
 
+/**
+ * "embedded" (default) renders an Airwallex card field on this page.
+ * "hosted" redirects the customer to Airwallex's Hosted Checkout page instead,
+ * which is the flow Shopify-style stores use.
+ */
+const HOSTED_CHECKOUT =
+  (process.env.NEXT_PUBLIC_AIRWALLEX_CHECKOUT_MODE ?? "embedded") === "hosted";
+
 type AirwallexElement = {
   mount: (target: string | HTMLElement) => void;
   unmount: () => void;
@@ -92,8 +100,10 @@ export default function CheckoutPage() {
 
   // Card details are entered inside an Airwallex-hosted iframe. The card
   // number, expiry and CVC never reach this page's DOM, state or our servers.
+  // In hosted mode there is nothing to mount — the customer pays on
+  // Airwallex's own page.
   useEffect(() => {
-    if (!paymentsConfigured) return;
+    if (!paymentsConfigured || HOSTED_CHECKOUT) return;
     let cancelled = false;
 
     loadAirwallexSdk()
@@ -148,7 +158,7 @@ export default function CheckoutPage() {
       setError("Payments are temporarily unavailable. Please try again later.");
       return;
     }
-    if (!window.Airwallex || !cardElementRef.current) {
+    if (!HOSTED_CHECKOUT && (!window.Airwallex || !cardElementRef.current)) {
       setError("Secure payment fields are still loading. Please try again in a moment.");
       return;
     }
@@ -194,12 +204,40 @@ export default function CheckoutPage() {
         throw new Error("Could not initialise payment");
       }
 
-      const { id, clientSecret } = (await res.json()) as {
+      const { id, clientSecret, checkoutUrl } = (await res.json()) as {
         id: string;
         clientSecret: string;
+        checkoutUrl: string;
       };
 
-      const result = await window.Airwallex.confirmPaymentIntent({
+      const snapshot = {
+        orderNumber,
+        email: billing.email,
+        total,
+        itemCount: lines.reduce((sum, l) => sum + l.quantity, 0),
+        intentId: id,
+      };
+      try {
+        window.localStorage.setItem("agentlume-last-order", JSON.stringify(snapshot));
+      } catch {
+        // ignore storage errors
+      }
+
+      // Hosted Checkout: hand the customer over to Airwallex's own page.
+      // The cart is cleared on the confirmation page once the payment is
+      // verified, so an abandoned payment does not empty the basket.
+      if (HOSTED_CHECKOUT) {
+        if (!checkoutUrl) throw new Error("No checkout URL returned");
+        window.location.href = checkoutUrl;
+        return;
+      }
+
+      const airwallex = window.Airwallex;
+      if (!airwallex || !cardElementRef.current) {
+        throw new Error("Payment fields unavailable");
+      }
+
+      const result = await airwallex.confirmPaymentIntent({
         element: cardElementRef.current,
         id,
         client_secret: clientSecret,
@@ -208,18 +246,6 @@ export default function CheckoutPage() {
 
       if (result?.status && result.status !== "SUCCEEDED") {
         throw new Error("Payment was not completed");
-      }
-
-      const snapshot = {
-        orderNumber,
-        email: billing.email,
-        total,
-        itemCount: lines.reduce((sum, l) => sum + l.quantity, 0),
-      };
-      try {
-        window.localStorage.setItem("agentlume-last-order", JSON.stringify(snapshot));
-      } catch {
-        // ignore storage errors
       }
 
       clearCart();
@@ -393,7 +419,20 @@ export default function CheckoutPage() {
               stores your card number.
             </p>
 
-            {paymentsConfigured ? (
+            {!paymentsConfigured ? (
+              <div className="mt-4 rounded-xl border border-line bg-paper-2 px-4 py-6 text-center text-sm text-muted">
+                Card payments are not available right now. Please contact{" "}
+                <a href={`mailto:${site.email}`} className="text-accent hover:underline">
+                  {site.email}
+                </a>{" "}
+                and we&apos;ll help you complete your order.
+              </div>
+            ) : HOSTED_CHECKOUT ? (
+              <div className="mt-4 rounded-xl border border-line bg-paper-2 px-4 py-6 text-center text-sm text-muted">
+                You&apos;ll be redirected to Airwallex&apos;s secure checkout to enter
+                your card details and complete payment.
+              </div>
+            ) : (
               <div className="mt-4">
                 <div
                   id="airwallex-card"
@@ -402,14 +441,6 @@ export default function CheckoutPage() {
                 {!sdkReady && (
                   <p className="mt-2 text-xs text-muted">Loading secure payment fields…</p>
                 )}
-              </div>
-            ) : (
-              <div className="mt-4 rounded-xl border border-line bg-paper-2 px-4 py-6 text-center text-sm text-muted">
-                Card payments are not available right now. Please contact{" "}
-                <a href={`mailto:${site.email}`} className="text-accent hover:underline">
-                  {site.email}
-                </a>{" "}
-                and we&apos;ll help you complete your order.
               </div>
             )}
           </fieldset>
@@ -559,8 +590,10 @@ export default function CheckoutPage() {
             className="w-full rounded-full bg-ink py-4 text-sm font-bold text-paper shadow-md transition duration-200 hover:bg-accent-dark hover:scale-[1.01] disabled:opacity-60 disabled:hover:scale-100"
           >
             {submitting
-              ? "Processing Payment..."
-              : `Pay ${currency.symbol}${total.toFixed(2)}`}
+              ? "Redirecting to secure payment..."
+              : HOSTED_CHECKOUT
+                ? `Continue to secure payment · ${currency.symbol}${total.toFixed(2)}`
+                : `Pay ${currency.symbol}${total.toFixed(2)}`}
           </button>
 
           <p className="text-center text-xs text-muted">
