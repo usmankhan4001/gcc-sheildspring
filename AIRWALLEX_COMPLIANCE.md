@@ -97,7 +97,7 @@ reasons for a decline, and no code change can resolve them.
 
 - [ ] **Entity / contact mismatch.** The site declares "Agent Lume Limited",
       Hong Kong Company No. 81160869, at a serviced office (Office Plus, Sheung
-      Wan), but the contact number is `+1 367 202 5511` — a North American
+      Wan), but the contact number is `+13672025511` — a North American
       number. Underwriters cross-check the website against the application and
       the companies registry. Either use a phone number in the entity's country
       or change the entity to match where you actually operate.

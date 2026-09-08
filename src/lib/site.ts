@@ -3,7 +3,7 @@ export const site = {
   legalName: "Agent Lume Limited",
   domain: "agentlume.io",
   email: "service@agentlume.io",
-  phone: "+1 367 202 5511",
+  phone: "+13672025511",
   phoneHref: "+13672025511",
   registrationNo: "81160869",
   jurisdiction: "Hong Kong SAR",

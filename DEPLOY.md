@@ -285,4 +285,4 @@ docker run -d -p 3000:3000 \
 
 ## Need Help?
 
-Contact the Agent Lume team at **service@agentlume.io** or **+1 367 202 5511**.
+Contact the Agent Lume team at **service@agentlume.io** or **+13672025511**.
