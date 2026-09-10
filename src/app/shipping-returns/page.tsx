@@ -9,7 +9,7 @@ import {
 } from "@/lib/commerce";
 
 export const metadata: Metadata = {
-  title: "Shipping & Returns",
+  title: "Shipping Policy",
   description: `Shipping options, delivery estimates and the ${site.name} ${RETURN_WINDOW_DAYS}-day return policy.`,
 };
 
@@ -27,7 +27,7 @@ export default function ShippingReturnsPage() {
     <div className="container-page py-16">
       <div className="max-w-2xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-muted">Policies</p>
-        <h1 className="mt-3 font-display text-3xl">Shipping &amp; Returns</h1>
+        <h1 className="mt-3 font-display text-3xl">Shipping Policy</h1>
         <p className="mt-3 text-sm text-muted">
           All prices and shipping rates on this page are in {currency.label} (
           {currency.code}).

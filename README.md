@@ -13,7 +13,7 @@ A clothing e-commerce storefront for **Agent Lume** ([agentlume.io](https://agen
 - Client-side cart (persisted to `localStorage`) with a live item count badge
 - Checkout with shipping selection, order summary, and a confirmation page
 - Card payments processed by **Airwallex** via hosted payment fields
-- Company pages: About, Contact, Shipping & Returns, Refund Policy, Terms of Service, Privacy Policy
+- Company pages: About, Contact, Shipping Policy, Refund Policy, Terms of Service, Privacy Policy
 
 ## Payments
 

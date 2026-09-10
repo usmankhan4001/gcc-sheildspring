@@ -55,6 +55,14 @@ export default function Header() {
           >
             All Products
           </Link>
+          <Link
+            href="/shipping-returns"
+            className={`text-sm font-semibold tracking-wide transition ${
+              pathname === "/shipping-returns" ? "text-accent border-b-2 border-accent pb-1" : "text-ink/80 hover:text-accent"
+            }`}
+          >
+            Shipping Policy
+          </Link>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -93,10 +101,17 @@ export default function Header() {
           ))}
           <Link
             href="/shop"
-            className="py-3 text-sm font-semibold text-ink"
+            className="border-b border-line/60 py-3 text-sm font-semibold text-ink"
             onClick={() => setMenuOpen(false)}
           >
             All Products
+          </Link>
+          <Link
+            href="/shipping-returns"
+            className="py-3 text-sm font-semibold text-ink"
+            onClick={() => setMenuOpen(false)}
+          >
+            Shipping Policy
           </Link>
         </nav>
       )}

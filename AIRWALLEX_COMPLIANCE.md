@@ -78,7 +78,7 @@ checkout, and no currency disclosure.
 
 - New `/refund-policy` page (eligibility, non-returnable items, return shipping
   cost, refund timing, exchanges, cancellation, disputes)
-- `/shipping-returns` expanded with customs/duties, tracking and lost parcels
+- `/shipping-returns` Shipping Policy page expanded with customs/duties, tracking and lost parcels
 - Checkout has a required Terms / Refund Policy / Privacy consent checkbox, an
   optional marketing opt-in, and a "charged in USD" disclosure
 - Checkout shows support contact details and links the Refund Policy next to the

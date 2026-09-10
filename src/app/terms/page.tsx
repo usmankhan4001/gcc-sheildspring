@@ -59,12 +59,12 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section title="4. Shipping, returns & refunds">
+        <Section title="4. Shipping policy, returns & refunds">
           <p>
             Shipping options, delivery estimates and return eligibility are set
             out on our{" "}
             <a href="/shipping-returns" className="text-accent hover:underline">
-              Shipping &amp; Returns
+              Shipping Policy
             </a>{" "}
             page and in our{" "}
             <a href="/refund-policy" className="text-accent hover:underline">

@@ -236,22 +236,15 @@ export default function CartPage() {
           </div>
 
           <Link
-            href="/checkout"
+            href="/shop"
             className="block w-full rounded-full bg-ink py-4 text-center text-sm font-bold text-paper shadow-md transition hover:bg-accent-dark hover:scale-[1.01]"
           >
-            Checkout Securely &middot; ${total.toFixed(2)}
+            Continue Shopping
           </Link>
 
           <div className="border-t border-line pt-4 text-center">
             <PaymentBadges className="justify-center" />
           </div>
-
-          <Link
-            href="/shop"
-            className="block text-center text-xs font-semibold text-muted hover:text-accent transition"
-          >
-            &larr; Or Continue Shopping
-          </Link>
         </div>
       </div>
     </div>

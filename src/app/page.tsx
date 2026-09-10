@@ -204,10 +204,10 @@ export default function Home() {
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               {
-                title: "Shipping & delivery",
+                title: "Shipping Policy",
                 body: "Standard and express options with published delivery estimates and dispatch times.",
                 href: "/shipping-returns",
-                cta: "Shipping details",
+                cta: "Shipping Policy",
               },
               {
                 title: "Returns & refunds",
